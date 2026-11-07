@@ -1,0 +1,13 @@
+[package]
+name = "factory-lang"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+toml = "0.8"
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+trivet = "3.1.0"
+smart-default = "0.7.1"
+ibig = "0.3.6"
+petgraph = "0.8.3"

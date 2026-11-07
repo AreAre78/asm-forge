@@ -1,0 +1,41 @@
+[meta]
+architecture = "arch name"
+variant = "variant name"
+
+description = "cool isa"
+
+[architecture]
+word_size = 8 # default 8
+endian = "big" # default big
+align = 1 # default 1, in words
+
+[const]
+foo = 8
+bar = "foo * 2"
+
+[syntax]
+comment = [";", "//"]
+is_case_sensitive = false
+
+[register]
+description = "8-bit register" # optional
+width = 3 # optional, if missing inferred from largest member
+
+[register.items]
+a = 0
+b = 1
+c = 2
+d = 3
+e = 4
+f = 5
+g = 6
+i = 7
+o = 7
+
+[[instruction]]
+pattern = "imm {imm:u6}"
+encoding = "00'2 @ imm"
+
+[[instruction]]
+pattern = "mov {dest:register}, {src:register}"
+encoding = "01'2 @ dest @ src"
